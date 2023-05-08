@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+
+  postgresql:
+    container_name: postgresoauth2
+    image: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: oauth2DB
+  pgadmin:
+    container_name: pgadminoauth2
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
